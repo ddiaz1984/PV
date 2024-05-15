@@ -1,0 +1,72 @@
+input {
+    background-color: #fff;
+    border: 1px solid;
+    border-color: #999 #fff #fff #999;
+    border-radius: 3px;
+    box-shadow: inset 0 1px 2px rgba(0,0,0,0.2);
+    display: block;
+    margin-bottom: 7px;
+    padding: .5em;
+}
+
+input.error {
+    background: #fff url("http://www.wallplayer.tv/images/wallplayer_en/icon_error_white.gif") no-repeat 97% center;
+    border-color: red;
+    box-shadow: inset 0 1px 2px rgba(0,0,0,0.2), 0 0 10px rgba(255,0,0,0.2);
+}
+
+input.success {
+    background: #fff url("https://www.tafensw.edu.au/howex/stylesets/tafensw/icons/tick-icon.png") no-repeat 97% center;
+    border-color: green;
+    box-shadow: inset 0 1px 2px rgba(0,0,0,0.2), 0 0 10px rgba(0,255,0,0.2);
+}
+
+.animated {
+  	-webkit-animation-fill-mode: both;
+	  -moz-animation-fill-mode: both;
+	  -ms-animation-fill-mode: both;
+	  -o-animation-fill-mode: both;
+	  animation-fill-mode: both;
+  	-webkit-animation-duration: 0.3s;
+  	-moz-animation-duration: 0.3s;
+  	-ms-animation-duration: 0.3s;
+	  -o-animation-duration: 0.3s;
+	  animation-duration: 0.3s;
+}
+
+@-webkit-keyframes shake {
+	  0%, 100% {-webkit-transform: translateX(0);}
+	  25%, 75% {-webkit-transform: translateX(-10px);}
+	  50% {-webkit-transform: translateX(10px);}
+}
+
+@-moz-keyframes shake {
+  	0%, 100% {-moz-transform: translateX(0);}
+	  25%, 75% {-moz-transform: translateX(-10px);}
+	  50% {-moz-transform: translateX(10px);}
+}
+
+@-o-keyframes shake {
+	  0%, 100% {-o-transform: translateX(0);}
+	  25%, 75% {-o-transform: translateX(-10px);}
+	  50% {-o-transform: translateX(10px);}
+}
+
+@keyframes shake {
+	  0%, 100% {transform: translateX(0);}
+	  25%, 75% {transform: translateX(-10px);}
+	  50% {transform: translateX(10px);}
+}
+
+.shake {
+	  -webkit-animation-name: shake;
+	  -moz-animation-name: shake;
+  	-o-animation-name: shake;
+	  animation-name: shake;
+}
+
+/* JUST FOR AESTHETICS */
+
+:focus {
+    outline: 0;
+}

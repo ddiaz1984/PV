@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="es"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+	<link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+
+	<title>Punto Venta</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Para ICONOS -->
+
+    <!-- Bootstrap Core CSS -->
+    <link href="{{ url_for('static', filename='css/bootstrap.css') }}" rel="stylesheet">
+
+    <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet">
+
+    <link href="{{ url_for('static', filename='css/main.css') }}" rel="stylesheet" type="text/css">
+
+    <!-- MetisMenu CSS -->
+    <link href="{{ url_for('static', filename='css/metisMenu.css') }}" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="{{ url_for('static', filename='css/sb-admin-2.css') }}" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="{{ url_for('static', filename='css/font-awesome.css') }}" rel="stylesheet" type="text/css">
+
+    <!--Archivos CSS para Alertify -->
+    <!-- include the style -->
+    <link href="{{ url_for('static', filename='css/alertify.css') }}" rel="stylesheet">
+    <!-- include a theme -->
+    <link href="{{ url_for('static', filename='css/bootstrap_002.css') }}" rel="stylesheet">
+
+	<!--extension BUTTONS para DataTables -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/buttons.css') }}">
+
+	<!--estilo bootstrap para extension BUTTONS -->
+
+	 <!--extension SELECT para DataTables -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/select.css') }}" >
+
+	<!--scroller para datatables -->
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/scroller.css') }}" >
+
+    <!--Archivos CSS para JQuery UI -->
+
+    <link rel="stylesheet" href= "{{ url_for('static', filename='css/jquery-ui.css') }}">
+
+	<!--Archivos Javascript-->
+
+	 <!-- jQuery -->
+    <script async="" src="{{ url_for('static', filename='js/analytics.js') }}" ></script>
+	<script src="{{ url_for('static', filename='js/jquery_003.js') }}" ></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="{{ url_for('static', filename='js/bootstrap.js') }}" ></script>
+
+    <!-- Metis Menu Plugin JavaScript -->
+    <script src="{{ url_for('static', filename='js/metisMenu.js') }}" ></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script src="{{ url_for('static', filename='js/sb-admin-2.js') }}" ></script>
+
+    <!--Archivos JS para DataTables -->
+    <script src="{{ url_for('static', filename='js/jquery.js') }}" ></script>
+
+    <!--Código JS propio para datatables -->
+    <script src="{{ url_for('static', filename='js/codigo_datatables.js') }}"></script>
+
+	<!--Archivos JS para DataTables estilo Bootstrap -->
+    <script src="{{ url_for('static', filename='js/dataTables_004.js') }}" ></script>
+
+    <!--extension BUTTONS para DataTables -->
+    <script type="text/javascript" src="{{ url_for('static', filename='js/dataTables.buttons.min.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/jszip.min.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/buttons.html5.min.js') }}"></script>
+
+	<!--extension SELECT para DataTables -->
+    <script src="{{ url_for('static', filename='js/dataTables_003.js') }}" ></script>
+
+	<!--extension KEYTABLES para DataTables -->
+	<script src="{{ url_for('static', filename='js/dataTables_002.js') }}"></script>
+
+    <!--Código JS para JQuery UI -->
+    <script src="{{ url_for('static', filename='js/jquery-ui.js') }}"></script>
+
+     <!--Código JS para HighCharts -->
+    <script src="{{ url_for('static', filename='js/highcharts.js') }}" ></script>
+    <script src="{{ url_for('static', filename='js/exporting.js') }}"></script>
+	<script src="{{ url_for('static', filename='js/highcharts-more.js') }}" ></script>
+	<script src="{{ url_for('static', filename='js/highcharts-3d.js') }}" ></script>
+	<script src="{{ url_for('static', filename='js/data.js') }}" ></script>
+
+    <!--Plugin para Imprimir -->
+    <script src="{{ url_for('static', filename='js/jquery_002.js') }}" ></script>
+
+    <!--Del Sistema -->
+    <script src="{{ url_for('static', filename='js/personal.js') }}" ></script>
+
+	<!--Código custom JS para alertify -->
+    <script src="{{ url_for('static', filename='js/alertify.js') }}" ></script>
+
+    <!-- Paginacion -->
+
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='media/css/jquery.dataTables.css') }}">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='resources/syntax/shCore.css') }}">
+
+	<script type="text/javascript" language="javascript" src="{{ url_for('static', filename='media/js/jquery.dataTables.js') }} "></script>
+	<script type="text/javascript" language="javascript" src="{{ url_for('static', filename='resources/syntax/shCore.js') }} "></script>
+	<script type="text/javascript" language="javascript" src="{{ url_for('static', filename='resources/demo.js') }} "></script>
+
+</head>
+
+<body>
+    <div id="wrapper"><!-- Inicio "wrapper" -->
+        <!-- Navigation -->
+<!--        <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">-->
+        <nav class="navbar navbar-default navbar-fixed-top" role="navigation" style="margin-bottom: 0">
+            <div class="navbar-header">
+				<!--boton tipo menu aparece solo en pantallas pequeñas-->
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Menú de navegación</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+
+            </div>
+            <!-- /.navbar-header -->
+
+            <ul class="nav navbar-top-links navbar-right">
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        {{ session.user }}<img src="{{ url_for('static', filename='img/user.png') }}" alt="" height="32" width="36">
+					</a>
+                    <ul class="dropdown-menu dropdown-user">
+
+                        <li>
+                            <a href="#"><i class="fa fa-user fa-fw"></i> Usuario {{ session.user }} </a>
+                        </li>
+                        <!--
+                        <li>
+                            <a href="#"><i class="fa fa-gear fa-fw"></i> Perfil de Usuario</a>
+                        </li>
+                        -->
+                        <li class="divider"></li>
+
+                        <li class="active">
+                            <a href="/login" ><i class="fa fa-sign-out fa-fw"></i> Cerrar Sesión</a>
+                        </li>
+
+                    </ul>
+                    <!-- /.dropdown-user -->
+                </li>
+
+
+                <!-- /.dropdown -->
+            </ul>
+
+            <!-- /.navbar-top-links -->
+
+<!--        <div class="navbar-default sidebar" role="navigation">-->
+			<div class="collapse navbar-collapse sidebar" role="navigation">
+                <div class="sidebar-nav ">
+                    <ul class="nav in" id="side-menu">
+
+						<li>
+                            <a href="/home" class="active"><i class="fa fa-home fa-fw"></i> Página Principal</a>
+                        </li>
+
+                        <!--
+                        <li>
+                            <a href="#"><i class="fa fa-money fa-fw"></i> Flujo de Cajas<span class="fa arrow"></span></a>
+                             <ul class="nav nav-second-level collapse" aria-expanded="false">
+                                 <li>
+                                    <a href="#">Movimientos</a>
+                                </li>
+                                <li>
+                                    <a href="#">Arqueos</a>
+                                </li>
+                            </ul>
+                        </li>
+                        -->
+
+                        <li>
+                            <a href="#"><i class="fa fa-tasks fa-fw"></i> Control de Stock<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level collapse" aria-expanded="false">
+                                <li>
+                                    <a href="/productos">Productos</a>
+                                </li>
+                                <li>
+                                    <a href="#">Categorías</a>
+                                </li>
+                                <!--
+                                <li>
+                                    <a href="#">Marcas</a>
+                                </li>
+                                <li>
+                                    <a href="#">Unidades/Medidas</a>
+                                </li>
+                                -->
+                            </ul>
+						</li>
+
+                        <li>
+                            <a href="#"><i class="fa fa-shopping-cart fa-fw"></i> Ventas<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level collapse" aria-expanded="false">
+                                <li>
+                                    <a href="#">Gestión de Ventas</a>
+                                </li>
+                                <!--
+                                <li>
+                                    <a href="#"> Devoluciones
+                                    </a>
+                                </li>
+                                -->
+                                <li>
+                                    <a href="#">Clientes
+                                    </a>
+                                </li>
+
+                            </ul>
+                            <!-- /.nav-second-level -->
+                        </li>
+
+                        <!--
+                       <li>
+						   <a href="#"><i class="fa fa-truck fa-flip-horizontal fa-fw"></i> Compras<span
+								   class="fa arrow"></span></a>
+						   <ul class="nav nav-second-level collapse" aria-expanded="false">
+							   <li>
+								   <a href="#">Gestión de Compras
+								   </a>
+							   </li>
+							   <li>
+								   <a href="#">Proveedores</a>
+							   </li>
+						   </ul>
+
+					   </li>
+
+
+                        <li>
+							<a href="#"><i class="fa fa-line-chart fa-fw"></i> Reportes<span
+									class="fa arrow"></span></a>
+							<ul class="nav nav-second-level collapse" aria-expanded="false">
+								<li>
+									<a href="#">Reportes Gráficos</a>
+								</li>
+							</ul>
+						</li>
+                        -->
+						<li>
+							<a href="#"><i class="fa fa-cog fa-fw"></i> Config. del Sistema<span
+									class="fa arrow"></span></a>
+							<ul class="nav nav-second-level collapse" aria-expanded="false">
+                                <!--
+								<li>
+									<a href="#">Parámetros <i class="fa fa-wrench" aria-hidden="true"></i>
+									</a>
+								</li>
+                                -->
+								<li>
+									<a href="#">Usuarios</a>
+								</li>
+
+							</ul>
+						</li>
+
+                    </ul>
+                </div>
+                <!-- /.sidebar-collapse -->
+            </div>
+            <!-- /.navbar-static-side -->
+        </nav>
+
+		{% block body %}
+
+        {% endblock %}
+
+
+</div><!-- Fin "wrapper" -->
+
+    <!--Script para dialogo de eliminar con alertify -->
+    <script>
+        function confirmar(url){
+            alertify.confirm(
+                'Eliminar Registro',
+                '¿Está seguro de eliminar el registro?',
+                function(){
+                    window.location.href=url;
+                     }
+                , function(){
+                    alertify.error('Cancelado')});
+        }
+    </script>
+
+
+
+    {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                    {% for message in messages %}
+                        <script>
+                            Swal.fire({
+                                position: 'center',
+                                icon: '{{ request.args.get("tipo") }}',
+                                title: "{{message}}",
+                                showConfirmButton: false,
+                                timer: 7000
+                            })
+                        </script>
+                    {% endfor %}
+                {% endif %}
+
+
+      {% endwith %}
+
+       {% if inicio == 'home' %}
+
+            <script>alertify.success('Conectado como: {{ session.user }} ');</script><div class="alertify-notifier ajs-bottom ajs-right"></div>
+
+       {% endif %}
+
+</body>
+</html>
+

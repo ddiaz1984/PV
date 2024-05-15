@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<link rel="shortcut icon" type="image/ico" href="http://www.datatables.net/favicon.ico">
+	<meta name="viewport" content="initial-scale=1.0, maximum-scale=2.0">
+
+	<title>DataTables example - Base style - compact</title>
+	<link rel="stylesheet" type="text/css" href="media/css/jquery.dataTables.css">
+	<link rel="stylesheet" type="text/css" href="resources/syntax/shCore.css">
+	<link rel="stylesheet" type="text/css" href="resources/demo.css">
+	<style type="text/css" class="init">
+	.dt-example #example tbody tr .ttes {
+	text-align: center;
+}
+    .dt-example p {
+	font-weight: bold;
+	color: #001142;
+	text-align: center;
+}
+    </style>
+	<script type="text/javascript" language="javascript" src="resources/jquery-1.11.3.min.js"></script>
+	<script type="text/javascript" language="javascript" src="media/js/jquery.dataTables.js"></script>
+	<script type="text/javascript" language="javascript" src="resources/syntax/shCore.js"></script>
+	<script type="text/javascript" language="javascript" src="resources/demo.js"></script>
+	<script type="text/javascript" language="javascript" class="init">
+
+$(document).ready(function() {
+	$('#example').DataTable();
+} );
+
+	</script>
+</head>
+
+<body class="dt-example">
+	<div class="container">
+		<section>
+		  <p><img src="assas.fw.png" width="183" height="87"></p>
+		  <table id="example" class="display compact" cellspacing="0" width="50%">
+			  <thead>
+					<tr>
+						<th>Nombre</th>
+						<th>Apellido</th>
+						<th>Sección</th>
+						<th width="922">Asterisco</th>
+						
+					</tr>
+			</thead>
+
+				<tfoot>
+					<tr>
+	<th > Nombres ></th>
+    <td > Apellidos ></td>
+    <td > Secci&oacute;n ></td>
+    <td > Asterisco ></td>
+					</tr>
+				</tfoot>
+
+				<tbody>
+					<tr>
+    <td nowrap="nowrap"><span class="fv">Adolfo</span></td>
+    <td nowrap="nowrap"><span class="fv">Ocampos</span></td>
+    <td nowrap="nowrap"><span class="fv">Operador</span></td>
+    <td nowrap="nowrap" class="ttes"><span class="fv">*702</span></td>
+  </tr>
+  <tr>
+    <td nowrap="nowrap"><span class="fv">Alberto Miguel</span></td>
+    <td nowrap="nowrap"><span class="fv">Alegre</span></td>
+    <td nowrap="nowrap"><span class="fv">TySI</span></td>
+    <td nowrap="nowrap" class="ttes"><span class="fv">*731</span></td>
+  </tr>
+  <tr>
+    <td nowrap="nowrap"><span class="fv">Aldo</span></td>
+    <td nowrap="nowrap"><span class="fv">Rojas</span></td>
+    <td nowrap="nowrap"><span class="fv">C.P. CDAP</span></td>
+    <td nowrap="nowrap" class="ttes"><span class="fv">*786</span></td>
+  </tr>
+  <tr>
+    <td nowrap="nowrap"><span class="fv">Alicia</span></td>
+    <td nowrap="nowrap"><span class="fv">Presentado</span></td>
+    <td nowrap="nowrap"><span class="fv">Atención Cliente SIS</span></td>
+    <td nowrap="nowrap" class="ttes"><span class="fv">*776</span></td>
+  </tr>
+  <tr>
+    <td nowrap="nowrap"><span class="fv">Amilcar Jos&eacute;</span></td>
+    <td nowrap="nowrap"><span class="fv">Negri Scolaris</span></td>
+    <td nowrap="nowrap"><span class="fv">Operador</span></td>
+    <td nowrap="nowrap" class="ttes"><span class="fv">*732</span></td>
+  </tr>
+  <tr>
+    <td nowrap="nowrap"><span class="fv">Ana</span></td>
+    <td nowrap="nowrap"><span class="fv">Romero</span></td>
+    <td nowrap="nowrap"><span class="fv">Operador</span></td>
+    <td nowrap="nowrap" class="ttes"><span class="fv">*788</span></td>
+  </tr>
+  <tr>
+    <td nowrap="nowrap"><span class="fv">Anal&iacute;a</span></td>
+    <td nowrap="nowrap"><span class="fv">Colmán</span></td>
+    <td nowrap="nowrap"><span class="fv">Estad&iacute;stica</span></td>
+    <td nowrap="nowrap" class="ttes"><span class="fv"> *791</span></td>
+  </tr>
+  <tr>
+    <td nowrap="nowrap"><span class="fv">Ana Mar&iacute;a</span></td>
+    <td nowrap="nowrap"><span class="fv">Cabral Ben&iacute;tez</span></td>
+    <td nowrap="nowrap"><span class="fv">Operador</span></td>
+    <td nowrap="nowrap" class="ttes"><span class="fv"> *733</span></td>
+  </tr>
+  <tr>
+    <td nowrap="nowrap"><span class="fv">Andr&eacute;s</span></td>
+    <td nowrap="nowrap"><span class="fv">Monges Medina</span></td>
+    <td nowrap="nowrap"><span class="fv">Administrador SOFIA</span></td>
+    <td nowrap="nowrap" class="ttes"><span class="fv">*777</span></td>
+  </tr>
+  <tr>
+    <td nowrap="nowrap"><span class="fv">Avelina</span></td>
+    <td nowrap="nowrap"><span class="fv">Baez</span></td>
+    <td nowrap="nowrap"><span class="fv">Secretar&iacute;a</span></td>
+    <td nowrap="nowrap" class="ttes"><span class="fv">*773</span></td>
+  </tr>
+  <tr>
+    <td nowrap="nowrap"><span class="fv">Carlos A.</span></td>
+    <td nowrap="nowrap"><span class="fv">Bogar&iacute;n Araujo</span></td>
+    <td nowrap="nowrap"><span class="fv">Operador</span></td>
+    <td nowrap="nowrap" class="ttes"><span class="fv">*734</span></td>
+  </tr>
+  <tr>
+    <td nowrap="nowrap"><span class="fv">Carlos Javier</span></td>
+    <td nowrap="nowrap"><span class="fv">Barrios Doria</span></td>
+    <td nowrap="nowrap"><span class="fv">Atención Cliente SIS</span></td>
+    <td nowrap="nowrap" class="ttes"><span class="fv">*735</span></td>
+  </tr>
+  <tr>
+    <td nowrap="nowrap"><span class="fv">Carolina</span></td>
+    <td nowrap="nowrap"><span class="fv">González</span></td>
+    <td nowrap="nowrap">&nbsp;</td>
+    <td nowrap="nowrap" class="ttes"><span class="fv">*723</span></td>
+  </tr>
+  <tr>
+    <td nowrap="nowrap"><span class="fv">Celeste</span></td>
+    <td nowrap="nowrap"><span class="fv">Ort&iacute;z</span></td>
+    <td nowrap="nowrap"><span class="fv">Secretar&iacute;a</span></td>
+    <td nowrap="nowrap" class="ttes"><span class="fv">*793</span></td>
+  </tr>
+  <tr>
+    <td nowrap="nowrap"><span class="fv">Christian</span></td>
+    <td nowrap="nowrap"><span class="fv">González Alvarez</span></td>
+    <td nowrap="nowrap"><span class="fv">Base de Datos</span></td>
+    <td nowrap="nowrap" class="ttes"><span class="fv">*781</span></td>
+  </tr>
+  <tr>
+    <td nowrap="nowrap"><span class="fv">Christian de    Jes&uacute;s</span></td>
+    <td nowrap="nowrap"><span class="fv">Villalba G&oacute;mez</span></td>
+    <td nowrap="nowrap"><span class="fv">Operador</span></td>
+    <td nowrap="nowrap" class="ttes"><span class="fv">*738</span></td>
+  </tr>
+  <tr>
+    <td nowrap="nowrap"><span class="fv">Christian    Derlis</span></td>
+    <td nowrap="nowrap"><span class="fv">Flores Garc&iacute;a</span></td>
+    <td nowrap="nowrap"><span class="fv">Operador</span></td>
+    <td nowrap="nowrap" class="ttes"><span class="fv">*736</span></td>
+  </tr>
+  <tr>
+    <td nowrap="nowrap"><span class="fv">Dalia Asunci&oacute;n</span></td>
+    <td nowrap="nowrap"><span class="fv">Ramirez Maldonado</span></td>
+    <td nowrap="nowrap"><span class="fv">SIF Am&eacute;rica</span></td>
+    <td nowrap="nowrap" class="ttes"><span class="fv">*724</span></td>
+  </tr>
+  <tr>
+    <td nowrap="nowrap"><span class="fv">Damián</span></td>
+    <td nowrap="nowrap"><span class="fv">Caballero</span></td>
+    <td nowrap="nowrap"><span class="fv">TySI</span></td>
+    <td nowrap="nowrap" class="ttes"><span class="fv">*739</span></td>
+  </tr>
+  <tr>
+    <td nowrap="nowrap"><span class="fv">Daniel</span></td>
+    <td nowrap="nowrap"><span class="fv">Adorno</span></td>
+    <td nowrap="nowrap"><span class="fv">SIF Am&eacute;rica</span></td>
+    <td nowrap="nowrap" class="ttes"><span class="fv">*727</span></td>
+  </tr>
+  <tr>
+    <td nowrap="nowrap"><span class="fv">Daniel</span></td>
+    <td nowrap="nowrap"><span class="fv">Amarilla</span></td>
+    <td nowrap="nowrap"><span class="fv">SIF Am&eacute;rica</span></td>
+    <td nowrap="nowrap" class="ttes"><span class="fv">*726</span></td>
+  </tr>
+  <tr>
+    <td nowrap="nowrap"><span class="fv">Daniel</span></td>
+    <td nowrap="nowrap"><span class="fv">Diaz</span></td>
+    <td nowrap="nowrap"><span class="fv">Estad&iacute;stica</span></td>
+    <td nowrap="nowrap" class="ttes"><span class="fv">*794</span></td>
+  </tr>
+  <tr>
+    <td nowrap="nowrap"><span class="fv">Danilo Javier</span></td>
+    <td nowrap="nowrap"><span class="fv">Nu&ntilde;ez Gonzalez</span></td>
+    <td nowrap="nowrap"><span class="fv">Atenci&oacute;n Cliente SIS</span></td>
+    <td nowrap="nowrap" class="ttes"><span class="fv">*772</span></td>
+  </tr>
+  <tr>
+    <td nowrap="nowrap"><span class="fv">Dora</span></td>
+    <td nowrap="nowrap"><span class="fv">Dom&iacute;nguez</span></td>
+    <td nowrap="nowrap"><span class="fv">Asesor</span></td>
+    <td nowrap="nowrap" class="ttes"><span class="fv">*740</span></td>
+  </tr>
+  <tr>
+    <td nowrap="nowrap"><span class="fv">Edgar</span></td>
+    <td nowrap="nowrap"><span class="fv">Denis</span></td>
+    <td nowrap="nowrap"><span class="fv">Operador</span></td>
+    <td nowrap="nowrap" class="ttes"><span class="fv">*741</span></td>
+  </tr>
+  <tr>
+    <td nowrap="nowrap"><span class="fv">Edgar</span></td>
+    <td nowrap="nowrap"><span class="fv">Ortiz Arza</span></td>
+    <td nowrap="nowrap"><span class="fv">Dpto. Base de Datos</span></td>
+    <td nowrap="nowrap" class="ttes"><span class="fv">*742</span></td>
+  </tr>
+  <tr>
+    <td nowrap="nowrap"><span class="fv">Edgar</span></td>
+    <td nowrap="nowrap"><span class="fv">Vera</span></td>
+    <td nowrap="nowrap"><span class="fv">Asesor</span></td>
+    <td nowrap="nowrap" class="ttes"><span class="fv">*796</span></td>
+  </tr>
+  <tr>
+    <td nowrap="nowrap"><span class="fv">Edgar Ezequiel</span></td>
+    <td nowrap="nowrap"><span class="fv">Ramirez Mart&iacute;nez</span></td>
+    <td nowrap="nowrap"><span class="fv">Operador</span></td>
+    <td nowrap="nowrap" class="ttes"><span class="fv">*787</span></td>
+  </tr>
+  <tr>
+    <td nowrap="nowrap"><span class="fv">Esteban</span></td>
+    <td nowrap="nowrap"><span class="fv">Amarilla Frágueda</span></td>
+    <td nowrap="nowrap"><span class="fv">Operador</span></td>
+    <td nowrap="nowrap" class="ttes"><span class="fv">*743</span></td>
+  </tr>
+  <tr>
+    <td nowrap="nowrap"><span class="fv">Fátima</span></td>
+    <td nowrap="nowrap"><span class="fv">Zaracho P.</span></td>
+    <td nowrap="nowrap"><span class="fv">Operador</span></td>
+    <td nowrap="nowrap" class="ttes"><span class="fv">*744</span></td>
+  </tr>
+  <tr>
+    <td nowrap="nowrap"><span class="fv">Faviola Raquel</span></td>
+    <td nowrap="nowrap"><span class="fv">Quintana Delorenzi</span></td>
+    <td nowrap="nowrap"><span class="fv">Operador</span></td>
+    <td nowrap="nowrap" class="ttes"><span class="fv">*745</span></td>
+  </tr>
+  <tr>
+    <td width="116" nowrap="nowrap"><span class="fv">Juan Eduardo </span></td>
+    <td width="125" nowrap="nowrap"><span class="fv">Aguilera</span></td>
+    <td width="143" nowrap="nowrap"><span class="fv">SIF    Am&eacute;rica</span></td>
+    <td nowrap="nowrap" class="ttes"><span class="fv">*725</span></td>
+  </tr>
+  <tr>
+    <td width="116" nowrap="nowrap"><span class="fv">Federico</span></td>
+    <td width="125" nowrap="nowrap"><span class="fv">Gim&eacute;nez</span></td>
+    <td width="143" nowrap="nowrap"><span class="fv">Operador</span></td>
+    <td nowrap="nowrap" class="ttes"><span class="fv">*705</span></td>
+  </tr>
+  <tr>
+    <td nowrap="nowrap"><span class="fv">Fernando Jos&eacute;</span></td>
+    <td nowrap="nowrap"><span class="fv">Molinas Camps</span></td>
+    <td nowrap="nowrap"><span class="fv">Operador</span></td>
+    <td nowrap="nowrap" class="ttes"><span class="fv">*746</span></td>
+  </tr>
+  <tr>
+    <td nowrap="nowrap"><span class="fv">Francisco</span></td>
+    <td nowrap="nowrap"><span class="fv">Colmán</span></td>
+    <td nowrap="nowrap"><span class="fv">Chofer</span></td>
+    <td nowrap="nowrap" class="ttes"><span class="fv">*747</span></td>
+  </tr>
+  <tr>
+    <td nowrap="nowrap"><span class="fv">Freddy</span></td>
+    <td nowrap="nowrap"><span class="fv">R&iacute;os</span></td>
+    <td nowrap="nowrap"><span class="fv">Operador</span></td>
+    <td nowrap="nowrap" class="ttes"><span class="fv">*716</span></td>
+  </tr>
+  <tr>
+    <td nowrap="nowrap"><span class="fv">Guillermo    Andr&eacute;s</span></td>
+    <td nowrap="nowrap"><span class="fv">Molinas Camps</span></td>
+    <td nowrap="nowrap"><span class="fv">Operador</span></td>
+    <td nowrap="nowrap" class="ttes"><span class="fv">*748</span></td>
+  </tr>
+  <tr>
+    <td nowrap="nowrap"><span class="fv">Gustavo</span></td>
+    <td nowrap="nowrap"><span class="fv">Vera</span></td>
+    <td nowrap="nowrap"><span class="fv">Base de Datos</span></td>
+    <td nowrap="nowrap" class="ttes"><span class="fv">*797</span></td>
+  </tr>
+  <tr>
+    <td nowrap="nowrap"><span class="fv">H&eacute;ctor</span></td>
+    <td nowrap="nowrap"><span class="fv">Amarilla</span></td>
+    <td nowrap="nowrap"><span class="fv">Operador</span></td>
+    <td nowrap="nowrap" class="ttes"><span class="fv">*701</span></td>
+  </tr>
+  <tr>
+    <td nowrap="nowrap"><span class="fv">Hugo</span></td>
+    <td nowrap="nowrap"><span class="fv">Ruiz Diaz</span></td>
+    <td nowrap="nowrap"><span class="fv">TySI</span></td>
+    <td nowrap="nowrap" class="ttes"><span class="fv">*749</span></td>
+  </tr>
+  <tr>
+    <td nowrap="nowrap"><span class="fv">Hugo</span></td>
+    <td nowrap="nowrap"><span class="fv">Leiva</span></td>
+    <td nowrap="nowrap">&nbsp;</td>
+    <td nowrap="nowrap" class="ttes"><span class="fv">*785</span></td>
+  </tr>
+  <tr>
+    <td nowrap="nowrap"><span class="fv">Humberto</span></td>
+    <td nowrap="nowrap"><span class="fv">Lopez</span></td>
+    <td nowrap="nowrap"><span class="fv">Depto. Funcional</span></td>
+    <td nowrap="nowrap" class="ttes"><span class="fv">*728</span></td>
+  </tr>
+  <tr>
+    <td nowrap="nowrap"><span class="fv">Humberto</span></td>
+    <td nowrap="nowrap"><span class="fv">G&oacute;mez</span></td>
+    <td nowrap="nowrap"><span class="fv">SIF Am&eacute;rica</span></td>
+    <td nowrap="nowrap" class="ttes"><span class="fv">*715</span></td>
+  </tr>
+  <tr>
+    <td nowrap="nowrap"><span class="fv">Iván</span></td>
+    <td nowrap="nowrap"><span class="fv">Dur&eacute;</span></td>
+    <td nowrap="nowrap"><span class="fv">Operador</span></td>
+    <td nowrap="nowrap" class="ttes"><span class="fv">*713</span></td>
+  </tr>
+  <tr>
+    <td nowrap="nowrap"><span class="fv">Jorge Alfredo</span></td>
+    <td nowrap="nowrap"><span class="fv">Fretes Pe&ntilde;a</span></td>
+    <td nowrap="nowrap"><span class="fv">Operador</span></td>
+    <td nowrap="nowrap" class="ttes"><span class="fv">*750</span></td>
+  </tr>
+  <tr>
+    <td nowrap="nowrap"><span class="fv">Jorge Gustavo</span></td>
+    <td nowrap="nowrap"><span class="fv">Massare Corvalán</span></td>
+    <td nowrap="nowrap"><span class="fv">TySI</span></td>
+    <td nowrap="nowrap" class="ttes"><span class="fv">*751</span></td>
+  </tr>
+  <tr>
+    <td nowrap="nowrap"><span class="fv">Jos&eacute;</span></td>
+    <td nowrap="nowrap"><span class="fv">Escobar</span></td>
+    <td nowrap="nowrap"><span class="fv">Operador</span></td>
+    <td nowrap="nowrap" class="ttes"><span class="fv">*710</span></td>
+  </tr>
+  <tr>
+    <td nowrap="nowrap"><span class="fv">Jos&eacute;</span></td>
+    <td nowrap="nowrap"><span class="fv">Hermosilla</span></td>
+    <td nowrap="nowrap"><span class="fv">TySI</span></td>
+    <td nowrap="nowrap" class="ttes"><span class="fv">*752</span></td>
+  </tr>
+  <tr>
+    <td nowrap="nowrap"><span class="fv">Jos&eacute;</span></td>
+    <td nowrap="nowrap"><span class="fv">Gauto Udrizar</span></td>
+    <td nowrap="nowrap"><span class="fv">Estad&iacute;stica</span></td>
+    <td nowrap="nowrap" class="ttes"><span class="fv">*753</span></td>
+  </tr>
+  <tr>
+    <td nowrap="nowrap"><span class="fv">Jos&eacute; Mar&iacute;a</span></td>
+    <td nowrap="nowrap"><span class="fv">Qui&ntilde;onez Bobadilla</span></td>
+    <td nowrap="nowrap"><span class="fv">Operador</span></td>
+    <td nowrap="nowrap" class="ttes"><span class="fv">*754</span></td>
+  </tr>
+  <tr>
+    <td nowrap="nowrap"><span class="fv">Juan</span></td>
+    <td nowrap="nowrap"><span class="fv">Estigarribia</span></td>
+    <td nowrap="nowrap"><span class="fv">Operador</span></td>
+    <td nowrap="nowrap" class="ttes"><span class="fv">*711</span></td>
+  </tr>
+  <tr>
+    <td nowrap="nowrap"><span class="fv">Juan</span></td>
+    <td nowrap="nowrap"><span class="fv">Vergara</span></td>
+    <td nowrap="nowrap"><span class="fv">TySI</span></td>
+    <td nowrap="nowrap" class="ttes"><span class="fv">*755</span></td>
+  </tr>
+  <tr>
+    <td nowrap="nowrap"><span class="fv">Juan Fernando</span></td>
+    <td nowrap="nowrap"><span class="fv">Paredes Romero</span></td>
+    <td nowrap="nowrap"><span class="fv">Arancel</span></td>
+    <td nowrap="nowrap" class="ttes"><span class="fv">*782</span></td>
+  </tr>
+  <tr>
+    <td nowrap="nowrap"><span class="fv">Juan Manuel</span></td>
+    <td nowrap="nowrap"><span class="fv">O'Hara</span></td>
+    <td nowrap="nowrap"><span class="fv">SIF Am&eacute;rica</span></td>
+    <td nowrap="nowrap" class="ttes"><span class="fv">*730</span></td>
+  </tr>
+  <tr>
+    <td nowrap="nowrap"><span class="fv">Juan Ram&oacute;n</span></td>
+    <td nowrap="nowrap"><span class="fv">González</span></td>
+    <td nowrap="nowrap"><span class="fv">UPS -Informática</span></td>
+    <td nowrap="nowrap" class="ttes"><span class="fv">*756</span></td>
+  </tr>
+  <tr>
+    <td nowrap="nowrap"><span class="fv">Julio    Rigoberto</span></td>
+    <td nowrap="nowrap"><span class="fv">Villalba (Mcal)</span></td>
+    <td nowrap="nowrap"><span class="fv">Operador</span></td>
+    <td nowrap="nowrap" class="ttes"><span class="fv">*792</span></td>
+  </tr>
+  <tr>
+    <td nowrap="nowrap"><span class="fv">Laura</span></td>
+    <td nowrap="nowrap"><span class="fv">Jacquet</span></td>
+    <td nowrap="nowrap">Asesoria</td>
+    <td nowrap="nowrap" class="ttes"><span class="fv">*790</span></td>
+  </tr>
+  <tr>
+    <td nowrap="nowrap"><span class="fv">Lorenzo</span></td>
+    <td nowrap="nowrap"><span class="fv">L&oacute;pez</span></td>
+    <td nowrap="nowrap"><span class="fv">Operador</span></td>
+    <td nowrap="nowrap" class="ttes"><span class="fv">*769</span></td>
+  </tr>
+  <tr>
+    <td nowrap="nowrap"><span class="fv">Luis Alberto</span></td>
+    <td nowrap="nowrap"><span class="fv">Ben&iacute;tez</span></td>
+    <td nowrap="nowrap">Control de Calidad</td>
+    <td nowrap="nowrap" class="ttes"><span class="fv">*718</span></td>
+  </tr>
+  <tr>
+    <td nowrap="nowrap"><span class="fv">Manuel</span></td>
+    <td nowrap="nowrap"><span class="fv">Rol&oacute;n</span></td>
+    <td nowrap="nowrap"><span class="fv">Operador</span></td>
+    <td nowrap="nowrap" class="ttes"><span class="fv">*721</span></td>
+  </tr>
+  <tr>
+    <td nowrap="nowrap"><span class="fv">Luis Alberto</span></td>
+    <td nowrap="nowrap"><span class="fv">Ojeda</span></td>
+    <td nowrap="nowrap"><span class="fv">Arancel</span></td>
+    <td nowrap="nowrap" class="ttes"><span class="fv">*784</span></td>
+  </tr>
+  <tr>
+    <td nowrap="nowrap"><span class="fv">Marcelo</span></td>
+    <td nowrap="nowrap"><span class="fv">Alvarez</span></td>
+    <td nowrap="nowrap"><span class="fv">SIF Am&eacute;rica</span></td>
+    <td nowrap="nowrap" class="ttes"><span class="fv">*714</span></td>
+  </tr>
+  <tr>
+    <td nowrap="nowrap"><span class="fv">Marcelo</span></td>
+    <td nowrap="nowrap"><span class="fv">Jara</span></td>
+    <td nowrap="nowrap"><span class="fv">Secretar&iacute;a</span></td>
+    <td nowrap="nowrap" class="ttes"><span class="fv">*720</span></td>
+  </tr>
+  <tr>
+    <td nowrap="nowrap"><span class="fv">Marcelo Jos&eacute;</span></td>
+    <td nowrap="nowrap"><span class="fv">Ortiz Cazal</span></td>
+    <td nowrap="nowrap"><span class="fv">Arancel</span></td>
+    <td nowrap="nowrap" class="ttes"><span class="fv">*774</span></td>
+  </tr>
+  <tr>
+    <td nowrap="nowrap"><span class="fv">Marcio Daniel</span></td>
+    <td nowrap="nowrap"><span class="fv">Nu&ntilde;ez Navarro</span></td>
+    <td nowrap="nowrap"><span class="fv">Operador</span></td>
+    <td nowrap="nowrap" class="ttes"><span class="fv">*758</span></td>
+  </tr>
+  <tr>
+    <td nowrap="nowrap"><span class="fv">Mart&iacute;n</span></td>
+    <td nowrap="nowrap"><span class="fv">Enciso Burgos</span></td>
+    <td nowrap="nowrap"><span class="fv">Operador</span></td>
+    <td nowrap="nowrap" class="ttes"><span class="fv">*759</span></td>
+  </tr>
+  <tr>
+    <td nowrap="nowrap"><span class="fv">Maximiliano</span></td>
+    <td nowrap="nowrap"><span class="fv">González</span></td>
+    <td nowrap="nowrap"><span class="fv">Operador</span></td>
+    <td nowrap="nowrap" class="ttes"><span class="fv">*712</span></td>
+  </tr>
+  <tr>
+    <td nowrap="nowrap"><span class="fv">Myrian</span></td>
+    <td nowrap="nowrap"><span class="fv">Pati&ntilde;o</span></td>
+    <td nowrap="nowrap"><span class="fv">Operador</span></td>
+    <td nowrap="nowrap" class="ttes"><span class="fv">*760</span></td>
+  </tr>
+  <tr>
+    <td nowrap="nowrap"><span class="fv">Nelson</span></td>
+    <td nowrap="nowrap"><span class="fv">Fleitas</span></td>
+    <td nowrap="nowrap"><span class="fv">Depto. Operativo</span></td>
+    <td nowrap="nowrap" class="ttes"><span class="fv">*768</span></td>
+  </tr>
+  <tr>
+    <td nowrap="nowrap"><span class="fv">Nestor Manuel</span></td>
+    <td nowrap="nowrap"><span class="fv">Villalba Gomez</span></td>
+    <td nowrap="nowrap"><span class="fv">Operador</span></td>
+    <td nowrap="nowrap" class="ttes"><span class="fv">*761</span></td>
+  </tr>
+  <tr>
+    <td nowrap="nowrap"><span class="fv">Oscar</span></td>
+    <td nowrap="nowrap"><span class="fv">Arroyo</span></td>
+    <td nowrap="nowrap"><span class="fv">Operador</span></td>
+    <td nowrap="nowrap" class="ttes"><span class="fv">*703</span></td>
+  </tr>
+  <tr>
+    <td nowrap="nowrap"><span class="fv">Oscar</span></td>
+    <td nowrap="nowrap"><span class="fv">Estigarribia</span></td>
+    <td nowrap="nowrap"><span class="fv">Admin CDAP</span></td>
+    <td nowrap="nowrap" class="ttes"><span class="fv">*775</span></td>
+  </tr>
+  <tr>
+    <td nowrap="nowrap"><span class="fv">Osvaldo Luis</span></td>
+    <td nowrap="nowrap"><span class="fv">Sarubbi Ben&iacute;tez</span></td>
+    <td nowrap="nowrap"><span class="fv">Dpto. TySI</span></td>
+    <td nowrap="nowrap" class="ttes"><span class="fv">*762</span></td>
+  </tr>
+  <tr>
+    <td nowrap="nowrap"><span class="fv">Patricia</span></td>
+    <td nowrap="nowrap"><span class="fv">Acosta</span></td>
+    <td nowrap="nowrap"><span class="fv">CDAP - SOFIA</span></td>
+    <td nowrap="nowrap" class="ttes"><span class="fv">*795</span></td>
+  </tr>
+  <tr>
+    <td nowrap="nowrap"><span class="fv">Paul</span></td>
+    <td nowrap="nowrap"><span class="fv">Ort&iacute;z</span></td>
+    <td nowrap="nowrap"><span class="fv">SIF Am&eacute;rica</span></td>
+    <td nowrap="nowrap" class="ttes"><span class="fv">*799</span></td>
+  </tr>
+  <tr>
+    <td nowrap="nowrap"><span class="fv">Rafael</span></td>
+    <td nowrap="nowrap"><span class="fv">Bareiro</span></td>
+    <td nowrap="nowrap"><span class="fv">Operador</span></td>
+    <td nowrap="nowrap" class="ttes"><span class="fv">*763</span></td>
+  </tr>
+  <tr>
+    <td nowrap="nowrap"><span class="fv">Ram&oacute;n</span></td>
+    <td nowrap="nowrap"><span class="fv">Olmedo</span></td>
+    <td nowrap="nowrap"><span class="fv">Desarrollador Web</span></td>
+    <td nowrap="nowrap" class="ttes"><span class="fv">*707</span></td>
+  </tr>
+  <tr>
+    <td nowrap="nowrap"><span class="fv">Ricardo </span></td>
+    <td nowrap="nowrap"><span class="fv">Almada</span></td>
+    <td nowrap="nowrap"><span class="fv">Operador</span></td>
+    <td nowrap="nowrap" class="ttes"><span class="fv">*706</span></td>
+  </tr>
+  <tr>
+    <td nowrap="nowrap"><span class="fv">Ricardo Damián</span></td>
+    <td nowrap="nowrap"><span class="fv">Fari&ntilde;a Portillo</span></td>
+    <td nowrap="nowrap"><span class="fv">Operador</span></td>
+    <td nowrap="nowrap" class="ttes"><span class="fv">*783</span></td>
+  </tr>
+  <tr>
+    <td nowrap="nowrap"><span class="fv">Roc&iacute;o</span></td>
+    <td nowrap="nowrap"><span class="fv">Amarilla</span></td>
+    <td nowrap="nowrap"><span class="fv">VUI</span></td>
+    <td nowrap="nowrap" class="ttes"><span class="fv">*704</span></td>
+  </tr>
+  <tr>
+    <td nowrap="nowrap"><span class="fv">Romina</span></td>
+    <td nowrap="nowrap"><span class="fv">Weiberlen</span></td>
+    <td nowrap="nowrap"><span class="fv">CDAP - Administraci&oacute;n</span></td>
+    <td nowrap="nowrap" class="ttes"><span class="fv">*798</span></td>
+  </tr>
+  <tr>
+    <td nowrap="nowrap"><span class="fv">Ruben</span></td>
+    <td nowrap="nowrap"><span class="fv">Sanguina</span></td>
+    <td nowrap="nowrap"><span class="fv">Operador</span></td>
+    <td nowrap="nowrap" class="ttes"><span class="fv">*765</span></td>
+  </tr>
+  <tr>
+    <td nowrap="nowrap"><span class="fv">Rub&eacute;n Dar&iacute;o</span></td>
+    <td nowrap="nowrap"><span class="fv">Cabral Benitez</span></td>
+    <td nowrap="nowrap"><span class="fv">Operador</span></td>
+    <td nowrap="nowrap" class="ttes"><span class="fv">*766</span></td>
+  </tr>
+  <tr>
+    <td nowrap="nowrap"><span class="fv">Sara</span></td>
+    <td nowrap="nowrap"><span class="fv">D&iacute;az</span></td>
+    <td nowrap="nowrap"><span class="fv">SIF Am&eacute;rica</span></td>
+    <td nowrap="nowrap" class="ttes"><span class="fv">*729</span></td>
+  </tr>
+  <tr>
+    <td nowrap="nowrap"><span class="fv">Susana</span></td>
+    <td nowrap="nowrap"><span class="fv">González Quesnel</span></td>
+    <td nowrap="nowrap"><span class="fv">Auditoría Interna SOFIA</span></td>
+    <td nowrap="nowrap" class="ttes"><span class="fv">*779</span></td>
+  </tr>
+  <tr>
+    <td nowrap="nowrap"><span class="fv">Vivian Celeste</span></td>
+    <td nowrap="nowrap"><span class="fv">Torres N&uacute;&ntilde;ez</span></td>
+    <td nowrap="nowrap"><span class="fv">Dpto. Estad&iacute;stica</span></td>
+    <td nowrap="nowrap" class="ttes"><span class="fv">*771</span></td>
+  </tr>
+  <tr>
+    <td nowrap="nowrap"><span class="fv">Walter</span></td>
+    <td nowrap="nowrap"><span class="fv">Galeano</span></td>
+    <td nowrap="nowrap"><span class="fv">Operador</span></td>
+    <td nowrap="nowrap" class="ttes"><span class="fv">*767</span></td>
+  </tr>
+  <tr>
+    <td nowrap="nowrap"><span class="fv">Yna</span></td>
+    <td nowrap="nowrap"><span class="fv">Kropff</span></td>
+    <td nowrap="nowrap"><span class="fv">C.P. Boquer&oacute;n</span></td>
+    <td nowrap="nowrap" class="ttes"><span class="fv">*770</span></td>
+  </tr>
+  <tr>
+    <td nowrap="nowrap">Diego</td>
+    <td nowrap="nowrap">Duarte</td>
+    <td nowrap="nowrap"><span class="fv">TySI</span></td>
+    <td nowrap="nowrap" class="ttes">&nbsp;</td>
+  </tr>
+  <tr>
+    <td nowrap="nowrap">Ivan</td>
+    <td nowrap="nowrap">Cardozo</td>
+    <td nowrap="nowrap">NOC</td>
+    <td nowrap="nowrap" class="ttes">&nbsp;</td>
+  </tr>
+				</tbody>
+</table>
+			
+	<section></section>
+</body>
+</html>
