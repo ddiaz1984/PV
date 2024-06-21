@@ -113,6 +113,9 @@
 	<script type="text/javascript" language="javascript" src="{{ url_for('static', filename='resources/syntax/shCore.js') }} "></script>
 	<script type="text/javascript" language="javascript" src="{{ url_for('static', filename='resources/demo.js') }} "></script>
 
+    <!-- SweetAlert2 -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 </head>
 
 <body>
@@ -142,11 +145,11 @@
                         <li>
                             <a href="#"><i class="fa fa-user fa-fw"></i> Usuario {{ session.user }} </a>
                         </li>
-                        <!--
+
                         <li>
                             <a href="#"><i class="fa fa-gear fa-fw"></i> Perfil de Usuario</a>
                         </li>
-                        -->
+
                         <li class="divider"></li>
 
                         <li class="active">
@@ -163,115 +166,116 @@
 
             <!-- /.navbar-top-links -->
 
-<!--        <div class="navbar-default sidebar" role="navigation">-->
-			<div class="collapse navbar-collapse sidebar" role="navigation">
-                <div class="sidebar-nav ">
-                    <ul class="nav in" id="side-menu">
+            <div class="navbar-default sidebar" role="navigation">-->
+			    <div class="collapse navbar-collapse sidebar" role="navigation">
+                    <div class="sidebar-nav ">
+                        <ul class="nav in" id="side-menu">
 
-						<li>
-                            <a href="/home" class="active"><i class="fa fa-home fa-fw"></i> Página Principal</a>
-                        </li>
-
-                        <!--
-                        <li>
-                            <a href="#"><i class="fa fa-money fa-fw"></i> Flujo de Cajas<span class="fa arrow"></span></a>
-                             <ul class="nav nav-second-level collapse" aria-expanded="false">
-                                 <li>
-                                    <a href="#">Movimientos</a>
-                                </li>
-                                <li>
-                                    <a href="#">Arqueos</a>
-                                </li>
-                            </ul>
-                        </li>
-                        -->
-
-                        <li>
-                            <a href="#"><i class="fa fa-tasks fa-fw"></i> Control de Stock<span class="fa arrow"></span></a>
-                            <ul class="nav nav-second-level collapse" aria-expanded="false">
-                                <li>
-                                    <a href="/productos">Productos</a>
-                                </li>
-                                <li>
-                                    <a href="#">Categorías</a>
-                                </li>
-                                <!--
-                                <li>
-                                    <a href="#">Marcas</a>
-                                </li>
-                                <li>
-                                    <a href="#">Unidades/Medidas</a>
-                                </li>
-                                -->
-                            </ul>
-						</li>
-
-                        <li>
-                            <a href="#"><i class="fa fa-shopping-cart fa-fw"></i> Ventas<span class="fa arrow"></span></a>
-                            <ul class="nav nav-second-level collapse" aria-expanded="false">
-                                <li>
-                                    <a href="#">Gestión de Ventas</a>
-                                </li>
-                                <!--
-                                <li>
-                                    <a href="#"> Devoluciones
-                                    </a>
-                                </li>
-                                -->
-                                <li>
-                                    <a href="#">Clientes
-                                    </a>
-                                </li>
-
-                            </ul>
-                            <!-- /.nav-second-level -->
-                        </li>
-
-                        <!--
-                       <li>
-						   <a href="#"><i class="fa fa-truck fa-flip-horizontal fa-fw"></i> Compras<span
-								   class="fa arrow"></span></a>
-						   <ul class="nav nav-second-level collapse" aria-expanded="false">
-							   <li>
-								   <a href="#">Gestión de Compras
-								   </a>
-							   </li>
-							   <li>
-								   <a href="#">Proveedores</a>
-							   </li>
-						   </ul>
-
-					   </li>
+                            <li>
+                                <a href="/home" class="active"><i class="fa fa-home fa-fw"></i> Página Principal</a>
+                            </li>
 
 
-                        <li>
-							<a href="#"><i class="fa fa-line-chart fa-fw"></i> Reportes<span
-									class="fa arrow"></span></a>
-							<ul class="nav nav-second-level collapse" aria-expanded="false">
-								<li>
-									<a href="#">Reportes Gráficos</a>
-								</li>
-							</ul>
-						</li>
-                        -->
-						<li>
-							<a href="#"><i class="fa fa-cog fa-fw"></i> Config. del Sistema<span
-									class="fa arrow"></span></a>
-							<ul class="nav nav-second-level collapse" aria-expanded="false">
-                                <!--
-								<li>
-									<a href="#">Parámetros <i class="fa fa-wrench" aria-hidden="true"></i>
-									</a>
-								</li>
-                                -->
-								<li>
-									<a href="#">Usuarios</a>
-								</li>
+                            <li>
+                                <a href="#"><i class="fa fa-money fa-fw"></i> Flujo de Cajas<span class="fa arrow"></span></a>
+                                 <ul class="nav nav-second-level collapse" aria-expanded="false">
+                                     <li>
+                                        <a href="#">Movimientos</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Arqueos</a>
+                                    </li>
+                                </ul>
+                            </li>
 
-							</ul>
-						</li>
 
-                    </ul>
+                            <li>
+                                <a href="#"><i class="fa fa-tasks fa-fw"></i> Control de Stock<span class="fa arrow"></span></a>
+                                <ul class="nav nav-second-level collapse" aria-expanded="false">
+                                    <li>
+                                        <a href="/producto">Productos</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Categorías</a>
+                                    </li>
+
+                                    <li>
+                                        <a href="#">Marcas</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Unidades/Medidas</a>
+                                    </li>
+
+                                </ul>
+                            </li>
+
+                            <li>
+                                <a href="#"><i class="fa fa-shopping-cart fa-fw"></i> Ventas<span class="fa arrow"></span></a>
+                                <ul class="nav nav-second-level collapse" aria-expanded="false">
+                                    <li>
+                                        <a href="#">Gestión de Ventas</a>
+                                    </li>
+
+                                    <li>
+                                        <a href="#"> Devoluciones
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <a href="#">Clientes
+                                        </a>
+                                    </li>
+
+                                </ul>
+                                <!-- /.nav-second-level -->
+                            </li>
+
+
+                           <li>
+                               <a href="#"><i class="fa fa-truck fa-flip-horizontal fa-fw"></i> Compras<span
+                                       class="fa arrow"></span></a>
+                               <ul class="nav nav-second-level collapse" aria-expanded="false">
+                                   <li>
+                                       <a href="#">Gestión de Compras
+                                       </a>
+                                   </li>
+                                   <li>
+                                       <a href="#">Proveedores</a>
+                                   </li>
+                               </ul>
+
+                           </li>
+
+
+                            <li>
+                                <a href="#"><i class="fa fa-line-chart fa-fw"></i> Reportes<span
+                                        class="fa arrow"></span></a>
+                                <ul class="nav nav-second-level collapse" aria-expanded="false">
+                                    <li>
+                                        <a href="#">Reportes Gráficos</a>
+                                    </li>
+                                </ul>
+                            </li>
+
+                            <li>
+                                <a href="#"><i class="fa fa-cog fa-fw"></i> Config. del Sistema<span
+                                        class="fa arrow"></span></a>
+                                <ul class="nav nav-second-level collapse" aria-expanded="false">
+
+                                    <li>
+                                        <a href="#">Parámetros <i class="fa fa-wrench" aria-hidden="true"></i>
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <a href="#">Usuarios</a>
+                                    </li>
+
+                                </ul>
+                            </li>
+
+                        </ul>
+                    </div>
                 </div>
                 <!-- /.sidebar-collapse -->
             </div>

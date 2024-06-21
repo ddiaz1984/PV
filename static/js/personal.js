@@ -39,43 +39,53 @@ function valideKey(evt){
 }
 
 /*PRODUCTOS*/
-function editarProducto(cod)
+function editarProducto(producto)
 {
     $.ajax({
-        url:"/producto",
+        url:"/productoEditar",
         type:"POST",
-        data:{codigo:cod},
+        data:{codigo:producto},
         success:function(data)
         {
           var obj = JSON.parse(data)
 
-          $('#listcuenta > option').each(function(){
+          $('#nombre1').val(obj[0]['nombre']);
 
-              if($(this).attr("data-value") == obj[0]['codcuenta'] ){
+          $('#listunidad1 > option').each(function(){
 
-                  $("#codcuenta2").val($(this).attr("value"));
+              if($(this).attr("data-value") == obj[0]['unidad'] ){
 
-                  $('#codcuenta3').val(obj[0]['codcuenta']);
+                  $("#unidad2").val($(this).attr("value"));
+
+                  $('#unidad3').val(obj[0]['unidad']);
               }
           });
 
-          $('#fechaconfirmacion1').val(obj[0]['fechaconfirmacion']);
+          $('#listcategoria1 > option').each(function(){
 
-          $('#listcategoria > option').each(function(){
+              if($(this).attr("data-value") == obj[0]['categoria'] ){
 
-              if($(this).attr("data-value") == obj[0]['codcategoria'] ){
+                  $("#categoria2").val($(this).attr("value"));
 
-                  $("#codcategoria2").val($(this).attr("value"));
-
-                  $('#codcategoria3').val(obj[0]['codcategoria']);
+                  $('#categoria3').val(obj[0]['categoria']);
               }
           });
 
-          $('#concepto1').val(obj[0]['concepto']);
-          $('#nrocomprobante1').val(obj[0]['nrocomprobante']);
-          $('#importe1').val(obj[0]['importe']);
+          $('#listmarca1 > option').each(function(){
 
-          $('#codigo').val(cod);
+              if($(this).attr("data-value") == obj[0]['marca'] ){
+
+                  $("#marca2").val($(this).attr("value"));
+
+                  $('#marca3').val(obj[0]['marca']);
+              }
+          });
+
+          $('#cantidad1').val(obj[0]['cantidad']);
+          $('#preciocompra1').val(obj[0]['preciocompra']);
+          $('#precioventa1').val(obj[0]['precioventa']);
+
+          $('#codigo').val(producto);
 
           $("#myModal1").modal("show");
 

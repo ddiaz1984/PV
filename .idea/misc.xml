@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="Black">
-    <option name="sdkName" value="Python 3.12 (puntoventa)" />
+    <option name="sdkName" value="Python 3.12 (PV)" />
   </component>
-  <component name="ProjectRootManager" version="2" project-jdk-name="Python 3.12 (parroquia-main)" project-jdk-type="Python SDK" />
+  <component name="ProjectRootManager" version="2" project-jdk-name="Python 3.12 (PV)" project-jdk-type="Python SDK" />
 </project>

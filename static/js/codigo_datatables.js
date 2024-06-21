@@ -73,21 +73,29 @@ $(document).ready(function() {
 
     $("#myModal").on('hide.bs.modal', function(){
 
-        $('#txtNombre').val('');
-        $('#txtPrecio').val('');
-        $('#txtStock').val('');
+        $('#nombre').val('');
+        $('#cantidad').val('');
+        $('#preciocompra').val('');
+        $('#precioventa').val('');
+        $('#unidad').val('');
+        $('#unidad1').val('');
         $('#categoria').val('');
         $('#categoria1').val('');
+        $('#marca').val('');
+        $('#marca1').val('');
     });
 
     $('#myModal').on('shown.bs.modal', function () {
 
-        $('#txtNombre').focus();
+        $('#nombre').focus();
 
-        $('#txtNombre').removeClass('success error animated shake');
-        $('#txtPrecio').removeClass('success error animated shake');
-        $('#txtStock').removeClass('success error animated shake');
+        $('#nombre').removeClass('success error animated shake');
+        $('#cantidad').removeClass('success error animated shake');
+        $('#preciocompra').removeClass('success error animated shake');
+        $('#precioventa').removeClass('success error animated shake');
+        $('#unidad').removeClass('success error animated shake');
         $('#categoria').removeClass('success error animated shake');
+        $('#marca').removeClass('success error animated shake');
 
     });
 
@@ -96,11 +104,25 @@ $(document).ready(function() {
     $('#myModal').on('blur', 'input', checkForValidations);
     $('#myModal').on('focus', 'input', removeValidationClass);
 
+    $("input[name=unidad]").change(function() {
+
+        var value=$("input[name=unidad]").val();
+        var data=$('#listunidad [value="' + value + '"]').data('value');
+        $('#unidad1').val(data);
+    });
+
     $("input[name=categoria]").change(function() {
 
         var value=$("input[name=categoria]").val();
         var data=$('#listcategoria [value="' + value + '"]').data('value');
         $('#categoria1').val(data);
+    });
+
+    $("input[name=marca]").change(function() {
+
+        var value=$("input[name=marca]").val();
+        var data=$('#listmarca [value="' + value + '"]').data('value');
+        $('#marca1').val(data);
     });
 
 });

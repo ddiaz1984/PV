@@ -7,7 +7,7 @@
     <div class="container-fluid">
 	   <h2 class="page-header hstyle"><i class="fa fa-home fa-fw"></i> Página Principal</h2>
 		<div class="row">
-
+            {% for producto in productos %}
 			<div class="col-lg-3 col-md-6">
 				<div class="panel panel-red cajasInicio">
 					<div class="panel-heading">
@@ -16,12 +16,12 @@
 								<i class="fa fa-tasks fa-5x"></i>
 							</div>
 							<div class="col-xs-9 text-right">
-								<div class="huge"></div>
+								<div class="huge">{{ producto.0 }}</div>
 								<div>Productos</div>
 							</div>
 						</div>
 					</div>
-					<a href="/productos">
+					<a href="/producto">
 						<div class="panel-footer">
 							<span class="pull-left">Ver más</span>
 							<span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
@@ -104,7 +104,7 @@
 
 		<div class="row">
 
-			<!--
+
 			<div class="col-lg-3 col-md-6">
 				<div class="panel panel-azul cajasInicio">
 					<div class="panel-heading">
@@ -200,7 +200,8 @@
 					</a>
 				</div>
 			</div>
-			-->
+
+            {%  endfor %}
 		</div>
     </div>
 </div>

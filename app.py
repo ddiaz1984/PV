@@ -116,18 +116,21 @@ def login():
 
 @app.route('/home')       
 def home():
-    #cursor = conn.cursor()
+    cursor = conn.cursor()
 
     #cursor.execute("WITH libroprimera AS (select count(*) as cantprimeracomu from libroprimeracomu), librobautismo AS (select count(*) as cantbautismo from librobautismo), libroconfirmacion AS (select count(*) as cantconfirmacion from libroconfirmacion), libromatrimonio AS (select count(*) as cantmatrimonio from libromatrimonio ) SELECT cantbautismo, cantprimeracomu, cantconfirmacion, cantmatrimonio FROM libroprimera, librobautismo, libroconfirmacion, libromatrimonio")
     #data = cursor.fetchall()
 
+    cursor.execute("WITH productos AS (select count(*) as cantproducto from productos) SELECT cantproducto FROM productos")
+    data = cursor.fetchall()
+
     #return render_template('home.html', libros=data)
-    return render_template('home.html', inicio='home')
+    return render_template('home.html', productos=data, inicio='home')
 
 
 #PRODUCTOS
 
-@app.route('/productos')
+@app.route('/producto')
 def producto():
     cursor = conn.cursor()
 
@@ -143,59 +146,63 @@ def producto():
     cursor.execute("select marca, nombre from marcas")
     data3 = cursor.fetchall()
 
-    return render_template('productos.html', productos = data, categorias = data1, unidades = data2, marcas = data3, inicio='producto')
+    return render_template('productos.html', productos = data, categorias = data1, unidades = data2, marcas = data3, inicio='final')
 
 
 @app.route('/productos/nuevo', methods=['POST'])
 def nuevoProducto():
     try:
         if request.method == 'POST':
-            txtNombre  = request.form['txtNombre']
-            txtPrecio  = request.form['txtPrecio']
-            txtStock   = request.form['txtStock']
-            categoria1 = request.form['categoria1']
+            nombre      = request.form['nombre']
+            unidad1     = request.form['unidad1']
+            categoria1  = request.form['categoria1']
+            marca1      = request.form['marca1']
+            cantidad    = request.form['cantidad']
+            preciocompra= request.form['preciocompra']
+            precioventa = request.form['precioventa']
 
             cursor = conn.cursor()
 
             cursor.execute(
-                "INSERT INTO public.productos(descripcion, precio, cantidad, estado, id_categoria) VALUES (%s,%s,%s,%s,%s)",
-                (txtNombre, txtPrecio, txtStock, 1, categoria1))
+                "INSERT INTO public.productos(nombre, cantidad, unidad, marca, categoria, preciocompra, precioventa) VALUES (%s,%s,%s,%s,%s,%s,%s)",
+                (nombre.upper(), cantidad, unidad1, marca1, categoria1, preciocompra, precioventa))
 
             conn.commit()
 
             flash('Producto Agregado correctamente !')
-            return redirect(url_for('productos', tipo='success'))
+            return redirect(url_for('producto', tipo='success'))
 
     except OperationalError as e:
         conn.rollback()
         flash('Error al insertar !')
-        return redirect(url_for('productos', tipo='error'))
+        return redirect(url_for('producto', tipo='error'))
 
     except errors.InvalidTextRepresentation as e:
         conn.rollback()
         flash('Error al insertar !')
-        return redirect(url_for('productos', tipo='error'))
+        return redirect(url_for('producto', tipo='error'))
 
 
-@app.route('/producto', methods=['GET', 'POST'])
+@app.route('/productoEditar', methods=['GET', 'POST'])
 def editarProducto():
-    codusu = request.form['codusu']
+    codigo = request.form['codigo']
 
     cursor = conn.cursor()
     cursor.execute(
-        "select codusu, nomyape, cedula, email, estado, clave, tipo from usuarios where codusu = '{0}'".format(codusu))
-    usuarios = cursor.fetchall()
+        "select producto, nombre, cantidad, unidad, marca, categoria, preciocompra, precioventa from productos where producto = '{0}'".format(codigo))
+    productos = cursor.fetchall()
 
     blogs_dict = []
-    for usuario in usuarios:
+    for producto in productos:
         blog_dict = {
-            'codusu': usuario[0],
-            'nomyape': usuario[1],
-            'cedula': usuario[2],
-            'email': usuario[3],
-            'estado': usuario[4],
-            'clave': usuario[5],
-            'tipo': usuario[6]
+            'producto': producto[0],
+            'nombre': producto[1],
+            'cantidad': producto[2],
+            'unidad': producto[3],
+            'marca': producto[4],
+            'categoria': producto[5],
+            'preciocompra': producto[6],
+            'precioventa': producto[7]
         }
         blogs_dict.append(blog_dict)
 
@@ -206,41 +213,43 @@ def editarProducto():
 def modificaProducto():
     try:
         if request.method == 'POST':
-            codusu = request.form['codusu1']
-            cedula = request.form['cedula1']
-            nomyape = request.form['nomyape1']
-            email = request.form['email1']
-            estado = request.form['estado1']
-            clave = request.form['clave1']
-            tipo = request.form['tipo1']
+            codigo = request.form['codigo']
+            nombre = request.form['nombre1']
+            unidad = request.form['unidad3']
+            categoria = request.form['categoria3']
+            marca = request.form['marca3']
+            cantidad = request.form['cantidad1']
+            preciocompra = request.form['preciocompra1']
+            precioventa = request.form['precioventa1']
 
             cursor = conn.cursor()
 
             cursor.execute("""
-            update usuarios 
-            set cedula = %s,
-                nomyape = %s,
-                email = %s,
-                estado = %s,
-               clave = %s,
-               tipo = %s
-           where codusu = %s
-            """, (cedula, nomyape, email, estado, clave, tipo, codusu))
+            update productos 
+            set nombre = %s, 
+               cantidad = %s, 
+               unidad = %s, 
+               marca = %s, 
+               categoria = %s, 
+               preciocompra = %s, 
+               precioventa= %s
+           where producto = %s
+            """, (nombre.upper(), cantidad, unidad, marca, categoria, preciocompra, precioventa, codigo))
 
             conn.commit()
 
-            flash('Usuario Editado correctamente !')
-            return redirect(url_for('usuario', tipo='success'))
+            flash('Producto Editado correctamente !')
+            return redirect(url_for('producto', tipo='success'))
 
     except OperationalError as e:
         conn.rollback()
         flash('Error al modificar !')
-        return redirect(url_for('usuario', tipo='error'))
+        return redirect(url_for('producto', tipo='error'))
 
     except errors.InvalidTextRepresentation as e:
         conn.rollback()
         flash('Error al modificar !')
-        return redirect(url_for('usuario', tipo='error'))
+        return redirect(url_for('producto', tipo='error'))
 
 
 @app.route('/productos/eliminar/<string:id>')
@@ -248,22 +257,22 @@ def eliminarProducto(id):
     try:
         cursor = conn.cursor()
 
-        cursor.execute("delete from usuarios where codusu = '{0}'".format(id))
+        cursor.execute("delete from productos where producto = '{0}'".format(id))
 
         conn.commit()
 
-        flash('Usuario Eliminado correctamente !')
-        return redirect(url_for('usuario', tipo='success'))
+        flash('Producto Eliminado correctamente !')
+        return redirect(url_for('producto', tipo='success'))
 
     except OperationalError as e:
         conn.rollback()
         flash('Error al eliminar !')
-        return redirect(url_for('usuario', tipo='error'))
+        return redirect(url_for('producto', tipo='error'))
 
     except errors.InvalidTextRepresentation as e:
         conn.rollback()
         flash('Error al eliminar !')
-        return redirect(url_for('usuario', tipo='error'))
+        return redirect(url_for('producto', tipo='error'))
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=3000, debug=True)

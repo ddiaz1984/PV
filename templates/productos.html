@@ -21,7 +21,6 @@
 					<table class="table table-striped table-hover table-condensed tabla dataTable no-footer" id="tablaProductos" role="grid" aria-describedby="tablaProductos_info" style="width: 100%;" cellspacing="0" width="100%">
 							<thead>
 								<tr role="row">
-									<th style="width: 0px;" class="sorting_asc" tabindex="0" aria-controls="tablaProductos" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Id: Activar para ordenar la columna de manera descendente">Producto</th>
 									<th class="sorting" tabindex="0" aria-controls="tablaProductos" rowspan="1" colspan="1" style="width: 466px;" aria-label="Nombre: Activar para ordenar la columna de manera ascendente">Nombre</th>
 									<th class="sorting" tabindex="0" aria-controls="tablaProductos" rowspan="1" colspan="1" style="width: 466px;" aria-label="Cantidad: Activar para ordenar la columna de manera ascendente">Cantidad</th>
 									<th class="sorting" tabindex="0" aria-controls="tablaProductos" rowspan="1" colspan="1" style="width: 466px;" aria-label="Unidad: Activar para ordenar la columna de manera ascendente">Unidad</th>
@@ -37,14 +36,13 @@
 
 									{% for producto in productos %}
                                             <tr role="row" class="odd">
-                                                <td>{{ producto.0 }}</td>
                                                 <td>{{ producto.1 }}</td>
-                                                <td>{{ producto.2 }}</td>
+                                                <td align="center">{{ producto.2 }}</td>
                                                 <td>{{ producto.3 }}</td>
                                                 <td>{{ producto.4 }}</td>
                                                 <td>{{ producto.5 }}</td>
-                                                <td>{{ producto.6 }}</td>
-                                                <td>{{ producto.7 }}</td>
+                                                <td align="center">{{ '{:,}'.format(producto.6).replace(',','.') }}</td>
+                                                <td align="center">{{ '{:,}'.format(producto.7).replace(',','.') }}</td>
 
                                                 <td style="text-align: center;">
 
@@ -65,7 +63,7 @@
 <!-- Contenido Principal -->
 
 <!-- Modal Agregar-->
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
     <div class="modal-dialog" role="document" style="width: 69%;">
         <div class="modal-content">
             <div class="modal-header">
@@ -82,31 +80,29 @@
 
                                 <div class="col-md-4">
 									<div class="form-group">
-										<label>Nombre <span class="text-danger">*</span></label>
-										<input class="form-control required" style="text-transform: uppercase;" type="text" name="txtNombre" id="txtNombre" maxlength="200" required>
+										<label>Nombre Producto<span class="text-danger">*</span></label>
+										<input class="form-control required" style="text-transform: uppercase;" type="text" name="nombre" id="nombre" maxlength="20" required>
 									</div>
 								</div>
-
-                                <div class="col-md-4">
-                                    <div class="form-group">
-                                        <label>Precio <span class="text-danger">*</span></label>
-                                        <input class="form-control required" type="text" name="txtPrecio" id="txtPrecio" maxlength="20" onkeypress="return valideKey(event);" required>
-                                    </div>
-                                </div>
-
-                                <div class="col-md-4">
-                                    <div class="form-group">
-                                        <label>Stock <span class="text-danger">*</span></label>
-                                        <input class="form-control" type="text" name="txtStock" id="txtStock" onkeypress="return valideKey(event);" maxlength="16" required>
-
-                                    </div>
-                                </div>
 
                             </div>
 
                             <div class="row" style="padding-left: 15px;padding-right: 15px;">
 
-                                <div class="col-md-6">
+                                <div class="col-md-4">
+									<div class="form-group">
+										<label>Unidad <span class="text-danger">*</span></label>
+										<input class="form-control required" type="text" list="listunidad" id="unidad" name="unidad"/>
+										<datalist id="listunidad">
+											{% for unidad in unidades %}
+												<option data-value= "{{unidad.0}}" value= "{{unidad.1}}" >
+											{% endfor %}
+										</datalist>
+										<input type="hidden" id="unidad1" name="unidad1">
+									</div>
+								</div>
+
+                                <div class="col-md-4">
 									<div class="form-group">
 										<label>Categorías <span class="text-danger">*</span></label>
 										<input class="form-control required" type="text" list="listcategoria" id="categoria" name="categoria"/>
@@ -119,7 +115,48 @@
 									</div>
 								</div>
 
+                                <div class="col-md-4">
+									<div class="form-group">
+										<label>Marca <span class="text-danger">*</span></label>
+										<input class="form-control required" type="text" list="listmarca" id="marca" name="marca"/>
+										<datalist id="listmarca">
+											{% for marca in marcas %}
+												<option data-value= "{{marca.0}}" value= "{{marca.1}}" >
+											{% endfor %}
+										</datalist>
+										<input type="hidden" id="marca1" name="marca1">
+									</div>
+								</div>
+
                             </div>
+
+                            <div class="row" style="padding-left: 15px;padding-right: 15px;">
+
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label>Cantidad <span class="text-danger">*</span></label>
+                                        <input class="form-control" type="text" name="cantidad" id="cantidad" onkeypress="return valideKey(event);" maxlength="8" required>
+
+                                    </div>
+                                </div>
+
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label>Precio Compra<span class="text-danger">*</span></label>
+                                        <input class="form-control required" type="text" name="preciocompra" id="preciocompra" maxlength="15" onkeypress="return valideKey(event);" required>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label>Precio Venta<span class="text-danger">*</span></label>
+                                        <input class="form-control required" type="text" name="precioventa" id="precioventa" maxlength="15" onkeypress="return valideKey(event);" required>
+                                    </div>
+                                </div>
+
+                            </div>
+
+
 
                             <div class="row" style="padding-left: 15px;padding-right: 15px;">
                                 <div class="col-md-12" style="margin-right: 3%;">
@@ -142,5 +179,124 @@
     <!-- /.modal-dialog -->
 </div>
 <!-- Fin Modal Agregar-->
+
+<!-- Modal Modificar-->
+<div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog" role="document" style="width: 69%;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h2 class="modal-title" id="myModalLabel">Modificar Producto</h2>
+            </div>
+            <div class="modal-body">
+                <div class="m-b-20">
+
+                    <div class="row">
+                        <form action="/productos/modifica" method="POST" id="productoForm">
+
+                            <div class="row" style="padding-left: 15px;padding-right: 15px;">
+
+                                <div class="col-md-4">
+									<div class="form-group">
+										<label>Nombre Producto<span class="text-danger">*</span></label>
+										<input class="form-control required" style="text-transform: uppercase;" type="text" name="nombre1" id="nombre1" maxlength="20" required>
+                                        <input type="hidden" name="codigo" id="codigo">
+									</div>
+								</div>
+
+                            </div>
+
+                            <div class="row" style="padding-left: 15px;padding-right: 15px;">
+
+                                <div class="col-md-4">
+									<div class="form-group">
+										<label>Unidad <span class="text-danger">*</span></label>
+										<input class="form-control required" type="text" list="listunidad1" id="unidad2" name="unidad2"/>
+										<datalist id="listunidad1">
+											{% for unidad in unidades %}
+												<option data-value= "{{unidad.0}}" value= "{{unidad.1}}" >
+											{% endfor %}
+										</datalist>
+										<input type="hidden" id="unidad3" name="unidad3">
+									</div>
+								</div>
+
+                                <div class="col-md-4">
+									<div class="form-group">
+										<label>Categorías <span class="text-danger">*</span></label>
+										<input class="form-control required" type="text" list="listcategoria1" id="categoria2" name="categoria2"/>
+										<datalist id="listcategoria1">
+											{% for categoria in categorias %}
+												<option data-value= "{{categoria.0}}" value= "{{categoria.1}}" >
+											{% endfor %}
+										</datalist>
+										<input type="hidden" id="categoria3" name="categoria3">
+									</div>
+								</div>
+
+                                <div class="col-md-4">
+									<div class="form-group">
+										<label>Marca <span class="text-danger">*</span></label>
+										<input class="form-control required" type="text" list="listmarca1" id="marca2" name="marca2"/>
+										<datalist id="listmarca1">
+											{% for marca in marcas %}
+												<option data-value= "{{marca.0}}" value= "{{marca.1}}" >
+											{% endfor %}
+										</datalist>
+										<input type="hidden" id="marca3" name="marca3">
+									</div>
+								</div>
+
+                            </div>
+
+                            <div class="row" style="padding-left: 15px;padding-right: 15px;">
+
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label>Cantidad <span class="text-danger">*</span></label>
+                                        <input class="form-control" type="text" name="cantidad1" id="cantidad1" onkeypress="return valideKey(event);" maxlength="8" required>
+
+                                    </div>
+                                </div>
+
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label>Precio Compra<span class="text-danger">*</span></label>
+                                        <input class="form-control required" type="text" name="preciocompra1" id="preciocompra1" maxlength="15" onkeypress="return valideKey(event);" required>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label>Precio Venta<span class="text-danger">*</span></label>
+                                        <input class="form-control required" type="text" name="precioventa1" id="precioventa1" maxlength="15" onkeypress="return valideKey(event);" required>
+                                    </div>
+                                </div>
+
+                            </div>
+
+
+
+                            <div class="row" style="padding-left: 15px;padding-right: 15px;">
+                                <div class="col-md-12" style="margin-right: 3%;">
+                                    <button class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                                    <button class="btn btn-primary">Guardar</button>
+
+                                </div>
+                            </div>
+
+                        </form>
+
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+<!-- Fin Modal Modificar-->
 
 {% endblock %}
